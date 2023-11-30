@@ -1,0 +1,11 @@
+[workspace]
+members = [
+    "compositor",
+    "client",
+    "env",
+]
+
+
+[workspace.dependencies]
+bindgen = "0.69.1"
+
