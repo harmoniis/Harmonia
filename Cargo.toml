@@ -1,8 +1,8 @@
 [workspace]
 members = [
     "compositor",
-    "client",
-    "env",
+    "agent",
+    "context",
 ]
 
 

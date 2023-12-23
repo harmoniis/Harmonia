@@ -10,15 +10,15 @@ path = "lib.rs"
 crate-type = ["cdylib"]
 
 [[bin]]
-name = "harmonia-client"
+name = "harmonia-agent"
 path = "main.rs"
-required-features = ["default"]
+# required-features = ["default"]
 
-[features]
-default = ["environment", "integration", "extropia"]
-environment = ["context", "backend"]
-integration = ["runtime", "filemanager", "launcher", "settings"]
-backend = ["accelerator", "compositor"]
+# [features]
+# default = ["environment", "integration", "extropia"]
+# environment = ["context", "backend"]
+# integration = ["runtime", "filemanager", "launcher", "settings"]
+# backend = ["accelerator", "compositor"]
 
 [dependencies]
 bindgen = "0.69.1"

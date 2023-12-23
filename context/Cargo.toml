@@ -10,10 +10,10 @@ edition = "2021"
 
 [build-dependencies]
 
-[features]
-default = ["topology", "realm"]
-topology = ["axiomia", "theoremia", "symmetria", "automaton"]
-realm = ["axiomia", "protoria", "reactoria"]
+#[features]
+#default = ["topology", "realm"]
+#topology = ["axiomia", "theoremia", "symmetria", "automaton"]
+#realm = ["axiomia", "protoria", "reactoria"]
 
 
 [package.metadata.docs.rs]

@@ -22,5 +22,8 @@ rust_library(
     name = "env",
     crate_type = "lib",
     srcs = glob(["src/**/*.rs"]),
+    deps = [
+        "//:sys_bindgen", 
+    ],
     features = select_features(features=["default", "topology", "realm"])
 )
