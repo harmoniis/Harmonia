@@ -75,7 +75,7 @@ config_setting(
 
 
 rust_library(
-    name = "lib",
+    name = "sharedlib",
     aliases = aliases(),
     deps = all_crate_deps(
         normal = True,
@@ -87,7 +87,7 @@ rust_library(
 
 rust_test(
     name = "unit_test",
-    crate = ":lib",
+    crate = ":sharedlib",
     aliases = aliases(
         normal_dev = True,
         proc_macro_dev = True,
@@ -98,26 +98,4 @@ rust_test(
     proc_macro_deps = all_crate_deps(
         proc_macro_dev = True,
     ),
-)
-
-
-cc_library(
-    name = "sys",
-    srcs = select({
-        ":freebsd-x86_64": ["sys.h"],
-        ":android_aarch64": ["source_android_aarch64.cpp"],
-        ":ios_aarch64": ["source_ios_aarch64.cpp"],
-        ":macos_aarch64": ["source_macos_aarch64.cpp"],
-        "//conditions:default": ["source_default.cpp"],
-    }),
-    srcs = ["sys.h"],
-)
-
-rust_bindgen_library(
-    name = "sys_bindgen",
-    bindgen_flags = [
-        "--allowlist-var=sys_.*",
-    ],
-    cc_lib = ":sys",
-    header = "sys.h",
 )
